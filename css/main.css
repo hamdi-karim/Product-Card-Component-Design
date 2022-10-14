@@ -30,6 +30,10 @@ main {
   word-wrap: break-word;
 }
 
+h1 {
+  color: hsl(212, 21%, 14%);
+}
+
 h1, .mainprice {
   margin-top: 0.2em;
   font: 2.5rem Fraunces, sans-serif;
@@ -66,10 +70,80 @@ button {
   border: unset;
 }
 
+button:hover, button:active {
+  background: hsl(158, 38%, 14%);
+}
+
 .btn-text {
   margin-left: 0.7em;
 }
 
 footer {
   margin-top: auto;
+  animation: moveTextDown 1s ease-in-out forwards;
+  text-align: center;
+}
+
+@media only screen and (min-width: 600px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+    width: 100%;
+    margin: auto auto
+  }
+
+  .perfume-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    background-position-x: 25%;
+  }
+
+  main {
+    border-radius: 0 10px 10px 0;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .wrapper {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .wrapper {
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .wrapper {
+    width: 60%;
+  }
+}
+
+
+@media only screen and (min-width: 1550px) {
+  .wrapper {
+    width: 50%;
+  }
+}
+
+
+@media only screen and (min-width: 1700px) {
+  .wrapper {
+    width: 40%;
+  }
+}
+
+@keyframes moveTextDown {
+  from {
+    transform: translateY(-100px);
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
